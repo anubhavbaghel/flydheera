@@ -319,7 +319,7 @@ export function Home() {
                                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                                 className="relative"
                             >
-                                <div className="text-6xl font-black text-white/20 absolute -top-10 left-0 select-none">
+                                <div className="text-6xl font-black text-secondary/10 absolute -top-10 left-0 select-none">
                                     {step.number}
                                 </div>
                                 <div className="relative pt-6">
