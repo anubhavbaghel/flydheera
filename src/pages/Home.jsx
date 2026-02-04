@@ -401,17 +401,17 @@ export function Home() {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                                className="relative"
+                                className="relative group"
                             >
-                                <div className="text-6xl font-black text-primary/10 absolute -top-10 left-0 select-none z-0">
+                                <div className="text-7xl font-black text-secondary/15 absolute -top-8 left-0 select-none z-0 transition-colors group-hover:text-secondary/20">
                                     {step.number}
                                 </div>
-                                <div className="relative pt-6 z-10">
+                                <div className="relative pt-10 z-10 px-2">
                                     <h3 className="text-xl font-bold text-primary mb-3">{step.title}</h3>
                                     <p className="text-gray-600 leading-relaxed text-sm">{step.desc}</p>
                                 </div>
                                 {idx < 3 && (
-                                    <div className="hidden md:block absolute top-12 -right-4 w-8 h-[2px] bg-primary/10" />
+                                    <div className="hidden md:block absolute top-14 -right-4 w-12 h-[1px] bg-secondary/30" />
                                 )}
                             </motion.div>
                         ))}
