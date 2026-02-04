@@ -5,6 +5,8 @@ import { Menu, X, Phone, User } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { cn } from '../../lib/utils';
 
+import logo from '../../assets/logo.png';
+
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -45,7 +47,7 @@ export function Navbar() {
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-3 z-50">
                     <img
-                        src="/src/assets/logo.png"
+                        src={logo}
                         alt="Flydheera Logo"
                         className="h-10 w-auto object-contain"
                     />

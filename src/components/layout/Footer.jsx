@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import logo from '../../assets/logo.png';
 
 export function Footer() {
     return (
@@ -12,7 +13,7 @@ export function Footer() {
                     <div className="space-y-6">
                         <Link to="/" className="flex items-center gap-3">
                             <img
-                                src="/src/assets/logo.png"
+                                src={logo}
                                 alt="Flydheera Logo"
                                 className="h-10 w-auto object-contain"
                             />
