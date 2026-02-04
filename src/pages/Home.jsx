@@ -8,7 +8,11 @@ import {
     MapPin,
     Plane,
     Phone,
-    CheckCircle2
+    CheckCircle2,
+    Utensils,
+    Crown,
+    UserCheck,
+    Lock
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { SectionHeader } from '../components/ui/SectionHeader';
@@ -20,35 +24,48 @@ import heroBg from '../assets/hero-bg.png';
 import doDhamImg from '../assets/do-dham.png';
 import joyrideImg from '../assets/joyride.png';
 import aboutPilotImg from '../assets/about-pilot.png';
+import privateJetImg from '../assets/private-jet.png';
+import ambulanceImg from '../assets/air-ambulance.png';
 
 export function Home() {
+    // Derived from original website "Why Fly Dheera"
     const features = [
         {
-            icon: Shield,
-            title: 'Safety First',
-            description: 'DGCA certified helicopters & experienced pilots.',
-        },
-        {
-            icon: Star,
-            title: 'Premium Experience',
-            description: 'VIP darshan, luxury stays, and gourmet meals.',
-        },
-        {
             icon: Clock,
-            title: 'Time Saving',
-            description: 'Complete Chardham Yatra in just 5 days.',
+            title: 'Personalised Scheduling',
+            description: 'Fly on your own terms. We adapt to your timeline, not the other way around.',
         },
         {
-            icon: Plane,
-            title: 'Modern Fleet',
-            description: 'Latest twin-engine and single-engine helicopters.',
+            icon: Crown,
+            title: 'Luxury Interiors',
+            description: 'Experience the pinnacle of comfort with plush seating and premium amenities.',
+        },
+        {
+            icon: Shield,
+            title: 'Safety & Confidentiality',
+            description: 'Your safety is our priority. We ensure complete privacy and discretion.',
+        },
+        {
+            icon: Utensils,
+            title: 'Finest Dining',
+            description: 'Gourmet meals and beverages served at 30,000 feet.',
+        },
+        {
+            icon: UserCheck,
+            title: 'Professional Crew',
+            description: 'Highly trained pilots and cabin crew dedicated to your service.',
+        },
+        {
+            icon: CheckCircle2,
+            title: 'Priority Boarding',
+            description: 'Skip the queues with exclusive terminal access and rapid boarding.',
         },
     ];
 
     const services = [
         {
             title: 'Chardham Yatra',
-            image: heroBg, // Reusing hero image or another specific one if available
+            image: heroBg,
             price: '₹1,90,000',
             description:
                 'The ultimate spiritual journey covering Yamunotri, Gangotri, Kedarnath, and Badrinath. Includes VIP darshan, luxury accommodation, and all transfers.',
@@ -75,6 +92,34 @@ export function Home() {
             link: '/do-dham-yatra',
         },
         {
+            title: 'Private Jet Charter',
+            image: privateJetImg,
+            price: 'Custom Quote',
+            description:
+                'Redefine business and leisure travel with our fleet of luxury private jets. Fly anywhere, anytime with unmatched comfort.',
+            features: [
+                'Global Reach',
+                'Privacy & Discretion',
+                'Gourmet Catering',
+                'Flexible Scheduling',
+            ],
+            link: '/contact',
+        },
+        {
+            title: 'Air Ambulance',
+            image: ambulanceImg,
+            price: 'Emergency Service',
+            description:
+                'Rapid response medical evacuation services equipped with ICU facilities and medical professionals.',
+            features: [
+                'ICU on Board',
+                'Medical Team Included',
+                'Bed-to-Bed Transfer',
+                '24/7 Availability',
+            ],
+            link: '/contact',
+        },
+        {
             title: 'Heli Joyride',
             image: joyrideImg,
             price: '₹5,000',
@@ -89,6 +134,16 @@ export function Home() {
             link: '/contact',
         },
     ];
+
+    const fleet = [
+        { name: "Beechcraft King Air C90", type: "Turboprop", seats: "6-7 Pax" },
+        { name: "Beechcraft King Air B200", type: "Turboprop", seats: "8-9 Pax" },
+        { name: "Cessna CJ2", type: "Light Jet", seats: "6 Pax" },
+        { name: "Bombardier Learjet 40", type: "Light Jet", seats: "6-7 Pax" },
+        { name: "Airbus H125 (B3)", type: "Helicopter", seats: "5-6 Pax" },
+        { name: "AgustaGrand", type: "Helicopter", seats: "6 Pax" },
+    ];
+
 
     const processSteps = [
         {
@@ -198,12 +253,16 @@ export function Home() {
                 </motion.div>
             </section>
 
-            {/* Features Stripe */}
-            <div className="bg-primary py-12 border-b border-white/5">
+            {/* Features Stripe (Updated based on analysis) */}
+            <div className="bg-primary py-16 border-b border-white/5">
                 <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="text-center mb-12">
+                        <span className="text-secondary text-sm font-bold tracking-widest uppercase">Why Fly Dheera</span>
+                        <h2 className="text-3xl font-bold text-white mt-2">The Gold Standard in Aviation</h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {features.map((feature, idx) => (
-                            <div key={idx} className="flex items-start gap-4 group">
+                            <div key={idx} className="flex items-start gap-4 group p-4 rounded-xl hover:bg-white/5 transition-colors duration-300">
                                 <div className="p-3 rounded-lg bg-white/5 group-hover:bg-secondary transition-colors duration-300">
                                     <feature.icon className="w-6 h-6 text-white" />
                                 </div>
@@ -243,9 +302,7 @@ export function Home() {
                                 aviation.
                             </p>
                             <p className="text-gray-600 text-lg leading-relaxed">
-                                Our mission is to make the divine accessible. Whether it's the sacred peaks of
-                                Kedarnath or a medical emergency, our fleet is ready to serve with precision,
-                                safety, and unwavering dedication.
+                                Whether you require a <span className="font-bold text-primary">Private Jet</span> for business, an <span className="font-bold text-primary">Air Ambulance</span> for a medical emergency, or a <span className="font-bold text-primary">Helicopter</span> for the sacred Chardham Yatra, our fleet is ready to serve with precision and dedication.
                             </p>
                             <Link to="/about">
                                 <Button variant="primary" size="lg" className="mt-4">
@@ -276,22 +333,52 @@ export function Home() {
                 </div>
             </section>
 
+            {/* Our Fleet Section - NEW */}
+            <section className="py-24 bg-primary text-white">
+                <div className="container mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Premium Fleet</h2>
+                        <p className="text-gray-400 max-w-2xl mx-auto">
+                            We operate a diverse fleet of state-of-the-art aircraft to meet every aviation need, from short hops to long-haul luxury travel.
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {fleet.map((aircraft, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: idx * 0.1 }}
+                                className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-colors"
+                            >
+                                <div className="flex items-center justify-between mb-4">
+                                    <Plane className="w-8 h-8 text-secondary" />
+                                    <span className="text-xs font-bold bg-secondary/20 text-secondary px-2 py-1 rounded">{aircraft.type}</span>
+                                </div>
+                                <h3 className="text-xl font-bold mb-2">{aircraft.name}</h3>
+                                <p className="text-gray-400 text-sm">Seating Capacity: <span className="text-white">{aircraft.seats}</span></p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Services Section */}
             <section className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4 text-center mb-16">
                     <SectionHeader
-                        title="Signature Journeys"
+                        title="Signature Services"
                         subtitle="Curated Experiences"
                         centered={true}
                     />
                     <p className="text-gray-600 max-w-2xl mx-auto text-lg mt-4">
-                        Embark on a spiritual odyssey with our exclusive Chardham and Do Dham packages,
-                        designed for comfort, efficiency, and divine connection.
+                        Discover our comprehensive range of aviation solutions, tailored for efficiency, luxury, and care.
                     </p>
                 </div>
 
                 <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* Centered grid for better alignment */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                         {services.map((service, index) => (
                             <ServiceCard key={index} {...service} index={index} />
                         ))}
@@ -300,14 +387,11 @@ export function Home() {
             </section>
 
             {/* Our Process Section */}
-            <section className="py-24 bg-primary text-white relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                    {/* Abstract pattern could go here */}
-                </div>
+            <section className="py-24 bg-white relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
-                        <div className="w-20 h-1 bg-secondary mx-auto"></div>
+                        <SectionHeader title="How It Works" subtitle="Your Journey" centered={true} />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -319,15 +403,15 @@ export function Home() {
                                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                                 className="relative"
                             >
-                                <div className="text-6xl font-black text-white/20 absolute -top-10 left-0 select-none">
+                                <div className="text-6xl font-black text-primary/10 absolute -top-10 left-0 select-none z-0">
                                     {step.number}
                                 </div>
-                                <div className="relative pt-6">
-                                    <h3 className="text-xl font-bold text-secondary mb-3">{step.title}</h3>
-                                    <p className="text-gray-400 leading-relaxed text-sm">{step.desc}</p>
+                                <div className="relative pt-6 z-10">
+                                    <h3 className="text-xl font-bold text-primary mb-3">{step.title}</h3>
+                                    <p className="text-gray-600 leading-relaxed text-sm">{step.desc}</p>
                                 </div>
                                 {idx < 3 && (
-                                    <div className="hidden md:block absolute top-12 -right-4 w-8 h-[2px] bg-white/10" />
+                                    <div className="hidden md:block absolute top-12 -right-4 w-8 h-[2px] bg-primary/10" />
                                 )}
                             </motion.div>
                         ))}
@@ -336,7 +420,7 @@ export function Home() {
             </section>
 
             {/* Testimonials */}
-            <section className="py-24 bg-white">
+            <section className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <SectionHeader title="Guest Experiences" subtitle="Testimonials" centered={true} />
 
@@ -347,7 +431,7 @@ export function Home() {
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: idx * 0.2 }}
-                                className="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow"
+                                className="bg-white p-8 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow"
                             >
                                 <div className="flex gap-1 mb-6">
                                     {[...Array(item.rating)].map((_, i) => (
