@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // Trigger deployment
 import { motion } from 'framer-motion';
 import {
     ArrowRight,
