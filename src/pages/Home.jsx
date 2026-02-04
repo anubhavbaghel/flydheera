@@ -137,6 +137,7 @@ export function Home() {
     return (
         <main>
             {/* Hero Section */}
+            {/* Hero Section */}
             <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
                 {/* Background Video/Image */}
                 <div className="absolute inset-0 z-0">
@@ -160,8 +161,8 @@ export function Home() {
                             India's Premier Aviation Service
                         </span>
                         <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                            Soar to the <br />
-                            <span className="text-secondary bg-clip-text">Divine Abode</span>
+                            Reach new spiritual heights <br />
+                            <span className="text-secondary bg-clip-text">Experience Divinity.</span>
                         </h1>
                         <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-xl leading-relaxed">
                             Experience the Chardham Yatra with unmatched luxury, safety, and

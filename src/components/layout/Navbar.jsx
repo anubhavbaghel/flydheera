@@ -43,22 +43,18 @@ export function Navbar() {
         >
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
                 {/* Logo */}
-                <Link to="/" className="flex items-center gap-2 z-50">
-                    {/* Placeholder for Logo - replacing text with a stylized version if image n/a */}
-                    <div className="flex flex-col">
-                        <h1 className={cn(
-                            "text-2xl font-bold tracking-tight uppercase leading-none transition-colors duration-300",
-                            isScrolled ? "text-primary" : "text-white"
-                        )}>
-                            Flydheera
-                        </h1>
-                        <span className={cn(
-                            "text-[10px] tracking-[0.2em] font-medium opacity-80 transition-colors duration-300",
-                            isScrolled ? "text-secondary" : "text-white/80"
-                        )}>
-                            Premium Aviation
-                        </span>
-                    </div>
+                <Link to="/" className="flex items-center gap-3 z-50">
+                    <img
+                        src="/src/assets/logo.png"
+                        alt="Flydheera Logo"
+                        className="h-10 w-auto object-contain"
+                    />
+                    <h1 className={cn(
+                        "text-xl font-normal font-sans tracking-tight leading-none transition-colors duration-300",
+                        isScrolled ? "text-primary" : "text-white"
+                    )}>
+                        FlyDheera
+                    </h1>
                 </Link>
 
                 {/* Desktop Nav */}

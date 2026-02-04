@@ -10,12 +10,16 @@ export function Footer() {
 
                     {/* Brand Column */}
                     <div className="space-y-6">
-                        <div className="flex flex-col">
-                            <h2 className="text-3xl font-bold uppercase tracking-tight text-white">Flydheera</h2>
-                            <span className="text-xs tracking-[0.3em] text-secondary font-semibold">AVIATION SERVICES</span>
-                        </div>
+                        <Link to="/" className="flex items-center gap-3">
+                            <img
+                                src="/src/assets/logo.png"
+                                alt="Flydheera Logo"
+                                className="h-10 w-auto object-contain"
+                            />
+                            <h2 className="text-2xl font-normal font-sans tracking-tight text-white">FlyDheera</h2>
+                        </Link>
                         <p className="text-gray-400 leading-relaxed text-sm">
-                            Your premier partner for spiritual aviation journeys. Specializing in Chardham and Do Dham Yatra by helicopter, providing safety, luxury, and comfort.
+                            Fly Dheera offers luxury and convenience of private flights at affordable prices. We strive to redefine private aviation by providing personalized trips and streamlined experiences.
                         </p>
                         <div className="flex gap-4">
                             {[Facebook, Instagram, Twitter].map((Icon, i) => (
@@ -88,7 +92,7 @@ export function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-                    <p>© {new Date().getFullYear()} DHEERA AVIATION LLP. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} FlyDheera. All rights reserved.</p>
                     <div className="flex gap-6">
                         <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
