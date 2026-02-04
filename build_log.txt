@@ -1,0 +1,58 @@
+﻿
+> flydheera-app@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 1044 modules transformed.
+node.exe : [31mΓ£ù[39m 
+Build failed in 2.44s
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: ([31m  
+  Γ£ù[39m Build failed i   
+ n 2.44s:String) [], Rem    
+oteException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+[31merror during build:
+[31mCould not resolve 
+"../components/ui/Button" 
+from "src/components/layout/
+PackageLayout.jsx"[31m
+file: [36mC:/Users/anubh/De
+sktop/DI_Infotech/Flydheera/
+flydheera-app/src/components
+/layout/PackageLayout.jsx[3
+1m
+    at getRollupError (file:
+///C:/Users/anubh/Desktop/DI
+_Infotech/Flydheera/flydheer
+a-app/node_modules/rollup/di
+st/es/shared/parseAst.js:402
+:41)
+    at error (file:///C:/Use
+rs/anubh/Desktop/DI_Infotech
+/Flydheera/flydheera-app/nod
+e_modules/rollup/dist/es/sha
+red/parseAst.js:398:42)
+    at ModuleLoader.handleIn
+validResolvedId (file:///C:/
+Users/anubh/Desktop/DI_Infot
+ech/Flydheera/flydheera-app/
+node_modules/rollup/dist/es/
+shared/node-entry.js:21687:2
+4)
+    at file:///C:/Users/anub
+h/Desktop/DI_Infotech/Flydhe
+era/flydheera-app/node_modul
+es/rollup/dist/es/shared/nod
+e-entry.js:21647:26[39m
