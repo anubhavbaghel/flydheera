@@ -47,13 +47,13 @@ export function Navbar() {
                     {/* Placeholder for Logo - replacing text with a stylized version if image n/a */}
                     <div className="flex flex-col">
                         <h1 className={cn(
-                            "text-2xl font-bold tracking-tight uppercase leading-none",
+                            "text-2xl font-bold tracking-tight uppercase leading-none transition-colors duration-300",
                             isScrolled ? "text-primary" : "text-white"
                         )}>
                             Flydheera
                         </h1>
                         <span className={cn(
-                            "text-[10px] tracking-[0.2em] font-medium opacity-80",
+                            "text-[10px] tracking-[0.2em] font-medium opacity-80 transition-colors duration-300",
                             isScrolled ? "text-secondary" : "text-white/80"
                         )}>
                             Premium Aviation
@@ -70,7 +70,7 @@ export function Navbar() {
                             className={cn(
                                 "text-sm font-medium transition-colors hover:text-secondary uppercase tracking-wide",
                                 isScrolled
-                                    ? location.pathname === link.path ? "text-secondary font-semibold" : "text-primary"
+                                    ? "text-primary"
                                     : "text-white/90 hover:text-white"
                             )}
                         >
@@ -86,7 +86,7 @@ export function Navbar() {
                 {/* Mobile Toggle */}
                 <button
                     className={cn(
-                        "lg:hidden z-50 p-2",
+                        "lg:hidden z-50 p-2 transition-colors duration-300",
                         isScrolled || isMobileMenuOpen ? "text-primary" : "text-white"
                     )}
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
