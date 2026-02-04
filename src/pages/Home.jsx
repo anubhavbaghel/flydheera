@@ -275,7 +275,7 @@ export function Home() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="lg:w-1/2 space-y-6"
+                            className="w-full lg:w-1/2 space-y-6"
                         >
                             <div className="inline-block px-3 py-1 bg-gray-100 text-primary text-xs font-bold tracking-widest uppercase rounded-sm">
                                 About Flydheera
@@ -303,9 +303,9 @@ export function Home() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="lg:w-1/2 relative"
+                            className="w-full lg:w-1/2 relative"
                         >
-                            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+                            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl h-[300px] md:h-[500px]">
                                 <Carousel
                                     images={[
                                         charterJetImg,   // "Exceptional chartered jet"
