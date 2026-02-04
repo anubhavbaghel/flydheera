@@ -388,7 +388,6 @@ export function Home() {
 
             {/* Our Process Section */}
             <section className="py-24 bg-white relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-16">
                         <SectionHeader title="How It Works" subtitle="Your Journey" centered={true} />
@@ -403,7 +402,7 @@ export function Home() {
                                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                                 className="relative group"
                             >
-                                <div className="text-7xl font-black text-secondary/15 absolute -top-8 left-0 select-none z-0 transition-colors group-hover:text-secondary/20">
+                                <div className="text-7xl font-black text-red-50 absolute -top-8 left-0 select-none z-0 transition-colors group-hover:text-red-100">
                                     {step.number}
                                 </div>
                                 <div className="relative pt-10 z-10 px-2">
