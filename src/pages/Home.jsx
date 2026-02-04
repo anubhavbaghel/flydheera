@@ -1,5 +1,5 @@
 import React from 'react'; // Trigger deployment
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
     ArrowRight,
     Star,
@@ -16,10 +16,56 @@ import { ServiceCard } from '../components/ui/ServiceCard';
 import { Link } from 'react-router-dom';
 
 // Assets
-import heroBg from '../assets/hero-bg.png';
+import heroBg from '../assets/spiritual-hero-bg.png';
 import doDhamImg from '../assets/do-dham.png';
 import joyrideImg from '../assets/joyride.png';
 import aboutPilotImg from '../assets/about-pilot.png';
+import privateJetImg from '../assets/private-jet.png';
+import charterJetImg from '../assets/charter-jet.png';
+import familyHeliImg from '../assets/family-heli.png';
+
+// Simple Carousel Component
+function Carousel({ images }) {
+    const [currentIndex, setCurrentIndex] = React.useState(0);
+
+    React.useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 4000); // Change every 4 seconds
+        return () => clearInterval(timer);
+    }, [images.length]);
+
+    return (
+        <div className="relative w-full h-full">
+            <AnimatePresence mode='wait'>
+                <motion.img
+                    key={currentIndex}
+                    src={images[currentIndex]}
+                    alt="Gallery"
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+            </AnimatePresence>
+
+            {/* Dots Indicator */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                {images.map((_, idx) => (
+                    <button
+                        key={idx}
+                        onClick={() => setCurrentIndex(idx)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-white w-6' : 'bg-white/50'
+                            }`}
+                    />
+                ))}
+            </div>
+            {/* Gradient Overlay for text readability if needed, though mostly decorative here */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
+        </div>
+    );
+}
 
 export function Home() {
     const features = [
@@ -238,10 +284,7 @@ export function Home() {
                                 Redefining Aviation <br /> in India
                             </h2>
                             <p className="text-gray-600 text-lg leading-relaxed">
-                                Flydheera Aviation, operated by <span className="font-bold text-primary">DHEERA AVIATION LLP</span>, is more than just a
-                                charter service; we are your partners in spiritual ascent. Incorporated in 2023, we
-                                have quickly established ourselves as pioneers in high-altitude pilgrimage
-                                aviation.
+                                Fly Dheera is a premier travel partner that offers exceptional chartered jet and Char Dham helicopter yatra package services. Our commitment to safety, quality, and customer satisfaction is what sets us apart from other travel companies. Whether you're planning a business trip, family vacation, or religious pilgrimage, we are here to make your travel dreams a reality.
                             </p>
                             <p className="text-gray-600 text-lg leading-relaxed">
                                 Our mission is to make the divine accessible. Whether it's the sacred peaks of
@@ -262,11 +305,13 @@ export function Home() {
                             transition={{ duration: 0.6 }}
                             className="lg:w-1/2 relative"
                         >
-                            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-                                <img
-                                    src={aboutPilotImg}
-                                    alt="Flydheera Pilot"
-                                    className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
+                            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+                                <Carousel
+                                    images={[
+                                        charterJetImg,   // "Exceptional chartered jet"
+                                        familyHeliImg,   // "Family vacation / Safety"
+                                        heroBg           // "Char Dham helicopter yatra"
+                                    ]}
                                 />
                             </div>
                             {/* Decorative Pattern */}
